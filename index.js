@@ -6,35 +6,30 @@ const links = [
     url: 'www.uzumaki.com',
     description: 'This is naruto uzumaki',
   }
-];
+]
 
-const typeDefs = `
-type Query {
-  info: String!
-  feed: [Link!]!
-}
-
-type Link {
-  id: ID!,
-  description: String!,
-  url: String!,
-}
-`;
+let idCount = links.length
 
 const resolvers = {
   Query: {
     info: () => 'This is Naruto Shipuddin!',
     feed: () => links,
   },
-  Link: {
-    id: (root) => root.id,
-    description: (root) => root.description,
-    url: (root) => root.url,
+  Mutation: {
+    post: (root, args) => {
+      const link = {
+        id: `link-${idCount++}`,
+        description: args.description,
+        url: args.url,
+      }
+      links.push(link)
+      return link
+    }
   }
 }
 
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: './src/schema.graphql',
   resolvers
 });
 
