@@ -1,9 +1,9 @@
-#service: hackernews-node
+service: hackernews-node
 
-#stage: dev
+stage: dev
 
 datamodel: datamodel.graphql
 
 secret: 'this is my secret'
-#cluster: public-denimcloud-983/prisma-eu1
+cluster: public-denimcloud-983/prisma-eu1
 endpoint: https://eu1.prisma.sh/public-denimcloud-983/hackernews-node/dev
