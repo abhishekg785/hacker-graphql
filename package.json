@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:abhishekg785/hacker-graphql.git",
-  "author": "ABHISHEK GOSWAMI ( Hiro ) <abhishek@ddproperty.com>",
+  "author": "ABHISHEK GOSWAMI ( Hiro )",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.13.1"
+    "graphql-yoga": "^1.13.1",
+    "prisma-binding": "^2.0.2"
   }
 }
