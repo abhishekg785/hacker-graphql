@@ -2,23 +2,14 @@ const { GraphQLServer } = require('graphql-yoga');
 
 const { Prisma } = require('prisma-binding');
 
+const Query = require('./src/resolvers/Query');
+const Mutation = require('./src/resolvers/Mutation');
+const AuthPayload = require('./src/resolvers/AuthPayload');
+
 const resolvers = {
-  Query: {
-    info: () => 'This is Naruto Shipuddin!',
-    feed: (root, args, context, info) => {
-      return context.db.query.links({}, info)
-    },
-  },
-  Mutation: {
-    post: (root, args, context, info) => {
-      return context.db.mutation.createLink({
-        data: {
-          url: args.url,
-          description: args.description,
-        },
-      }, info);
-    }
-  }
+  Query,
+  Mutation,
+  AuthPayload,
 }
 
 const server = new GraphQLServer({
@@ -28,8 +19,8 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: 'https://eu1.prisma.sh/public-denimcloud-983/hackernews-node/dev',
-      secret: 'this is my secret',
+      endpoint: 'https://eu1.prisma.sh/public-ebonyswoop-649/hackernews-node/dev',
+      secret: 'secret123',
       debug: true,
     })
   })
