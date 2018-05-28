@@ -1,10 +1,9 @@
-#service: hackernews-node
+service: hackernews-node
 
-#stage: dev
+stage: dev
 
 datamodel: datamodel.graphql
 
 secret: 'secret123'
 
-#cluster: public-ebonyswoop-649/prisma-eu1
-endpoint: https://eu1.prisma.sh/public-ebonyswoop-649/hackernews-node/dev
+cluster: public-ballistichead-614/prisma-eu1

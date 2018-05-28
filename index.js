@@ -5,11 +5,13 @@ const { Prisma } = require('prisma-binding');
 const Query = require('./src/resolvers/Query');
 const Mutation = require('./src/resolvers/Mutation');
 const AuthPayload = require('./src/resolvers/AuthPayload');
+const Subscription = require('./src/resolvers/Subscription');
 
 const resolvers = {
   Query,
   Mutation,
   AuthPayload,
+  Subscription,
 }
 
 const server = new GraphQLServer({
@@ -19,7 +21,7 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: 'https://eu1.prisma.sh/public-ebonyswoop-649/hackernews-node/dev',
+      endpoint: 'https://eu1.prisma.sh/public-ballistichead-614/hackernews-node/dev',
       secret: 'secret123',
       debug: true,
     })
