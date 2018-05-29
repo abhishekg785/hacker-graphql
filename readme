@@ -1,2 +1,10 @@
 hacker-graphql
 --------------
+
+Run:
+
+"node index.js" , to start the server
+
+"graphql playground"
+
+"graphql deploy", to deploy the db schema changes to the cloud prisma db
